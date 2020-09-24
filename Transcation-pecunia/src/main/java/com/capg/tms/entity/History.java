@@ -19,7 +19,7 @@ public class History {
 	
 	private String operation;
 	
-	private int acc_id;
+	private long acc_id;
 	
 	private double amount;
 
@@ -39,11 +39,11 @@ public class History {
 		this.operation = operation;
 	}
 
-	public int getAcc_id() {
+	public long getAcc_id() {
 		return acc_id;
 	}
 
-	public void setAcc_id(int acc_id) {
+	public void setAcc_id(long acc_id) {
 		this.acc_id = acc_id;
 	}
 

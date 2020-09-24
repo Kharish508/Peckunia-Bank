@@ -19,13 +19,13 @@ class TranscationPecuniaApplicationTests {
 	
 	@BeforeEach
 	void setUp() {
-		bean = new TransactionBean(200,"helly",150000.0,"8334155692");
+		bean = new TransactionBean(200,"helly",1050.0,"8334155692");
 	}
 	
 	
 	@Test
 	void contextLoads() {
-		TransactionBean transaction=dao.debitUsingSlip(200, 150000.0);
+		TransactionBean transaction=dao.debitUsingSlip(200, 1050.0);
 	}
 
 }

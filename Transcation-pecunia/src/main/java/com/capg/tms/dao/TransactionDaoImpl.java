@@ -1,31 +1,32 @@
 package com.capg.tms.dao;
 
 import java.util.List;
+import java.util.Random;
 
 //import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import javax.security.auth.login.AccountNotFoundException;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.capg.tms.Exception.InSufficientException;
 import com.capg.tms.entity.History;
 import com.capg.tms.entity.TransactionBean;
 
-@Repository
-@Transactional
+@Service
+
 public class TransactionDaoImpl implements ITransactionDao {
 
 	@PersistenceContext
 	EntityManager em;
 
 	@Autowired
-	IRepository repo;
+	IRepositoy repo;
 
 	@Override
 	public TransactionBean addAccount(TransactionBean bean) {

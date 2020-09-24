@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -66,7 +66,7 @@ public class TransactionRestController {
     - Description      : customer crediting the amount into account
      ******************************************/
 	
-	@GetMapping("/creditUsingSlip/{id}/{amount}") // GET: http://localhost:8090/transaction/creditUsingSlip/10/1000
+	@PutMapping("/creditUsingSlip/{id}/{amount}") // GET: http://localhost:8090/transaction/creditUsingSlip/10/1000
 	public String creditUsingSlip(@PathVariable int id, @PathVariable double amount) throws Exception {
 		
 		TransactionBean transaction = service.creditUsingSlip(id, amount);
@@ -94,7 +94,7 @@ public class TransactionRestController {
     - Description      : customer debiting the amount into account
      ******************************************/
 
-	@GetMapping("/debitUsingSlip/{account_id}/{amount}") // http://localhost:8090/transaction/debitUsingSlip/10/2000
+	@PutMapping("/debitUsingSlip/{account_id}/{amount}") // http://localhost:8090/transaction/debitUsingSlip/10/2000
 	public String debitUsingSlip(@PathVariable int account_id, @PathVariable double amount) throws Exception {
 		TransactionBean transaction = service.debitUsingSlip(account_id, amount);
 

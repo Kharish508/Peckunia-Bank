@@ -1,18 +1,20 @@
 package com.capg.tms.entity;
 
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name="transctions")
 public class TransactionBean {
  
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private int account_id;
+	
+	private long account_id;
+	
 	
 	private String customer_name;
 	
@@ -20,12 +22,14 @@ public class TransactionBean {
 	
 	private String contact_number;
 
-	public int getAccount_id() {
+	public long getAccount_id() {
 		return account_id;
 	}
 
-	public void setAccount_id(int account_id) {
-		this.account_id = account_id;
+	public void setAccount_id(long l) {
+		
+        
+		this.account_id = l;
 	}
 
 	public String getCustomer_name() {
@@ -53,7 +57,7 @@ public class TransactionBean {
 	}
 	
 
-	public TransactionBean(int account_id, String customer_name, double amount, String contact_number) {
+	public TransactionBean(long account_id, String customer_name, double amount, String contact_number) {
 		super();
 		this.account_id = account_id;
 		this.customer_name = customer_name;
